@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Vision — Ezer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vision behind Ezer." />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Adding basic modal styling so it doesn't look broken */
+    #contactModal {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      min-width: 300px;
+    }
+    form label { display: block; margin-bottom: 10px; }
+    form input, form textarea { width: 100%; margin-top: 5px; }
+
+    #openForm {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #007bff; /* Or your brand color */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#openForm:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a href="index.html" class="brand">Ezer</a>
+    <nav>
+      <a href="about.html" aria-current="page">About</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Vision</h1>
+
+    <p>
+        Ezer Labs deploys robots where work is repetitive, hazardous, or simply better handled by machines.
+    </p>
+
+    <p>
+        We believe robots should take on the tasks that harm us: the dull, dirty, and dangerous work 
+        that leads to injury, fatigue, and long-term health risks. 
+        Our goal is not to replace our workers, but to augment us, shifting our effort toward supervision, judgment, creativity, and care.
+    </p>
+
+    <p>
+        We help our partners deploy robotics in a modular, affordable, and safe fashion. 
+        By pairing every deployment with hands-on training, we ensure we can all operate, maintain, and collaborate with these new tools together. 
+        To fuel this evolution, we collect real-world data, ensuring the work our robots and workers do together continues to push the boundaries of AI.
+    </p>
+
+
+    <p>
+        Technology alone is not progress. 
+        Adoption, trust, and capability matter just as much. 
+        That is why we design with our workers and small businesses, not just for them.
+    </p>
+
+    <p>
+        We are putting robots to work across the UK. 
+    </p>
+
+    <p>
+        Interested to learn more? <button id="openForm">Get in touch.</button>
+    </p>
+
+    <div id="contactModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc; z-index:1000;">
+        <form action="https://formspree.io/f/xzdgbbak" method="POST">
+          <label>
+            Email:
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Message:
+            <textarea name="message" required></textarea>
+          </label>
+          <button type="submit">Send</button>
+          <button type="button" id="closeForm">Back</button>
+        </form>
+    </div>
+
+    <script>
+      const modal = document.getElementById('contactModal');
+      const btn = document.getElementById('openForm');
+      const closeBtn = document.getElementById('closeForm');
+
+      btn.onclick = () => modal.style.display = "block";
+      closeBtn.onclick = () => modal.style.display = "none";
+
+      // Close modal if user clicks outside of it
+      window.onclick = (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+
+
+
+  </main>
+</body>
+</html>

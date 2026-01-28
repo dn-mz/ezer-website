@@ -1,12 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Namecheap site</title>
+  <title>Ezer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ezer builds robots that do real work." />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  
 </head>
 <body>
-  <h1>Hello — my site is live!</h1>
-  <p>This is a minimal static site hosted on GitHub Pages.</p>
+  <header class="nav">
+    <a href="index.html" class="brand">Ezer</a>
+    <nav>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="media">
+        <img
+          src="assets/laundry_robots.gif"
+          alt="Robots performing laundry tasks"
+          class="hero-gif"
+        />
+      </div>
+
+    <h1 class="headline">
+      We put robots to work.
+    </h1>
+    <h2>
+      <i>So humans don't have to do the <span id="rotating-text">dull</span> work.</i>
+    </h2>
+  </main>
+
+  <script>
+    const phrases = [
+      "dull",
+      "dirty",
+      "dangerous",
+      
+    ];
+  
+    let index = 0;
+    const textEl = document.getElementById("rotating-text");
+  
+    setInterval(() => {
+      textEl.classList.add("fade-out");
+  
+      setTimeout(() => {
+        index = (index + 1) % phrases.length;
+        textEl.textContent = phrases[index];
+        textEl.classList.remove("fade-out");
+      }, 300);
+    }, 2200);
+  </script>
 </body>
 </html>
